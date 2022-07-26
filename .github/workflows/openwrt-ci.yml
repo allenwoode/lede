@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 # 
 
-name: 树莓派2B
+name: 树莓派2B-失败重来
 
 on:
   schedule:
@@ -60,7 +60,7 @@ jobs:
           mkdir openwrt-packages
           cd openwrt-packages
           git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
-          git clone https://github.com/Ameykyl/luci-app-koolproxyR
+          # git clone https://github.com/Ameykyl/luci-app-koolproxyR # removed from github
           git clone https://github.com/rosywrt/luci-theme-rosy
           git clone https://github.com/frainzy1477/luci-app-clash.git
 
@@ -182,8 +182,8 @@ jobs:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-theme-argon=y
           CONFIG_PACKAGE_luci-theme-netgear=y
-          # CONFIG_PACKAGE_luci-theme-rosy=y
-          # CONFIG_PACKAGE_luci-theme-atmaterial=y
+          CONFIG_PACKAGE_luci-theme-rosy=y
+          CONFIG_PACKAGE_luci-theme-atmaterial=y
           EOF
 
           # 常用软件包:
