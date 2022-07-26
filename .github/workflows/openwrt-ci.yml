@@ -10,8 +10,11 @@ name: 云编译1.更换固件平台
 on:
   schedule:
     - cron: 0 20 * * *
-  release:
-    types: [published]
+  #release:
+  #  types: [published]
+  push:
+    branches:
+    - master
 
 jobs:
 
